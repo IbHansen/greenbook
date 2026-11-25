@@ -1,0 +1,59 @@
+version: 1
+project:
+  id: modelflow-greenbook
+  title: GREU in ModelFlow
+  authors:
+    - name: Ib Hansen
+  description: >-
+    DREAM's GreenREFORM-EU 2.0 (Danish benchmark) translated to ModelFlow and solved over
+    2020-2050 in one stacked Newton, with an FTT technology block as an experiment.
+    Example calculations based on example data.
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: latex/mfbook-template
+      output: exports/pdf/greenbook.pdf
+      articles: &chapters
+        - intro.md
+        - onboarding.md
+        - solving.md
+        - ftt_model.md
+        - greu_co2tax_dose.ipynb
+        - greu_co2tax_energy_flows.ipynb
+        - greu_s2_switch.ipynb
+        - greu_ftt_block.ipynb
+        - greu_ftt_co2tax.ipynb
+    - format: tex
+      template: latex/mfbook-template
+      output: exports/tex/greenbook.tex
+      articles: *chapters
+  toc:
+    - file: intro.md
+      title: Introduction
+    - title: The model in ModelFlow
+      children:
+        - file: onboarding.md
+          title: Onboarding
+        - file: solving.md
+          title: Solving
+        - file: ftt_model.md
+          title: An FTT technology block
+    - title: The CO2 tax
+      children:
+        - file: greu_co2tax_dose.ipynb
+          title: Dose response
+        - file: greu_co2tax_energy_flows.ipynb
+          title: Energy flows
+        - file: greu_s2_switch.ipynb
+          title: A tax plus a model switch
+    - title: Technology dynamics with FTT
+      children:
+        - file: greu_ftt_block.ipynb
+          title: The FTT block alone
+        - file: greu_ftt_co2tax.ipynb
+          title: The CO2 tax with the FTT block
+site:
+  template: book-theme
+  options:
+    logo_text: GREU in ModelFlow
