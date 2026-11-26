@@ -50,6 +50,10 @@ of the sum in the price.
 In FTT the share is a stock. Each year share flows between every pair of technologies, towards the cheaper one,
 at a rate limited by how fast capacity is replaced.
 
+FTT was developed by Mercure for the power sector [@mercure_ftt_2012; @mercure_dynamics_2014]. FTT-FLEX
+[@chewpreecha_ftt-flex_2024] is a simplified version for countries with little data, which can be linked to a
+macroeconomic model; its reference list has more of the FTT literature.
+
 $$\begin{aligned}
 sqT_{l,t} = sqT_{l,t-1} &+ \sum_{ll} (sqT_{l,t-1} + seed_l)\, sqT_{ll,t-1}\, \frac{F_{l,ll}\, room_l}{LifeSpan_{ll}} \\
  &- \sum_{ll} (sqT_{ll,t-1} + seed_{ll})\, sqT_{l,t-1}\, \frac{F_{ll,l}\, room_{ll}}{LifeSpan_l} \\
